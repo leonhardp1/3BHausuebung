@@ -7,6 +7,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     public EratosthenesPrimeSieve(int upperBound) {
         this.upperBound = upperBound;
         this.sieve = new boolean[upperBound + 1];
+        fillSieve();
     }
 
 
@@ -28,6 +29,19 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
             }
         }
         System.out.println();
+    }
+    private void fillSieve() {
+        for (int i = 2; i <= upperBound; i++) {
+            sieve[i] = true;
+        }
+
+        for (int i = 2; i * i <= upperBound; i++) {
+            if (sieve[i]) {
+                for (int j = i * i; j <= upperBound; j += i) {
+                    sieve[j] = false;
+                }
+            }
+        }
     }
 
 
