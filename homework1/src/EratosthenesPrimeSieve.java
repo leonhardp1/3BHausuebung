@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class EratosthenesPrimeSieve implements PrimeSieve {
-    private int upperBound;
-    private boolean[] sieve;
+    private final int upperBound;
+    private final boolean[] sieve;
 
     public EratosthenesPrimeSieve(int upperBound) {
         this.upperBound = upperBound;
